@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,11 +41,11 @@ class EmployeeServiceImplTest {
 
     @Test
     void getAllEmployees() throws Exception {
-        Employee employee1 = new Employee();
+        Employee employee1 = new Employee(1L,"Gonzalo", new BigDecimal(320800), new BigDecimal(25), "");
         employee1.setId(1L);
         employee1.setEmployee_name("Gonzalo");
 
-        Employee employee2 = new Employee();
+        Employee employee2 = new Employee(2L,"Mishell", new BigDecimal(320800), new BigDecimal(25), "");
         employee2.setId(2L);
         employee2.setEmployee_name("Mishell");
 
@@ -63,7 +64,7 @@ class EmployeeServiceImplTest {
 
         Long employeeId = 1L;
 
-        Employee employee1 = new Employee();
+        Employee employee1 = new Employee(1L,"Gonzalo", new BigDecimal(320800), new BigDecimal(25), "");
         employee1.setId(employeeId);
         employee1.setEmployee_name("Gonzalo");
 
